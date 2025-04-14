@@ -1,0 +1,48 @@
+### Template
+
+
+### LOCAL SETUP
+To run this locally, there are two options
+1. running on docker (easiest and quickest)
+2. running app with **HOT RELOAD**
+
+#### Running on Docker
+This is the fastest way to get up and running because this process will handle running the app with hot reload, running migrations on file change and any other necessary bootstrapping. Use docker compose by running 
+
+```bash
+    docker-compose -f docker-compose.[environment].yml build --build-arg TAG=$TAG
+```
+
+#### Starting App Manually With Hot Reload
+To start the app locally with **hot reload**, run the following commands
+
+```bash
+    go install github.com/air-verse/air@latest
+
+    air
+```
+> **NOTE** Ensure that your Go Path is synced with the bin directory of your local machine
+
+#### Running The App By Yourself 
+To run the app your self, ensure a `.env` file exists in the base directory, lookup the [.env.example file](./.env.example) for setup example. Afterwards run the command below
+```bash
+    go run ./
+```
+
+#### Running In Production
+To have the app ready for production, run the following commands
+
+```bash
+    # Build executable
+    go build -o ./tmp/main .
+
+    # Make build executable
+    chmod +x ./tmp/main
+
+    ## Run the app
+    ./tmp/main
+
+```
+
+### DATABASE
+We have defered to using mongodb as our database of choice, this leads us to making some other decision which include
