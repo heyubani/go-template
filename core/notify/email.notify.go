@@ -31,7 +31,7 @@ type INotificationRequest struct {
 	Data         map[string]any `json:"data,omitempty"`
 	Retries      int            `json:"retries,omitempty"`
 	Meta         map[string]any `json:"meta,omitempty"`
-	IsCloudsania bool           `json:"isCloudsania"`
+	IsAdmin   bool           `json:"isAdmin"`
 }
 
 func SendEmail(message INotificationRequest, logger interfaces.ILogger) {

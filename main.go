@@ -9,7 +9,7 @@ import (
 )
 
 func main() {
-	fmt.Println("About Starting Cloudsania logging Service")
+	fmt.Println("About Starting Template Api Service")
 
 	mongoDb := database.ConnectMongo()
 	defer mongoDb()

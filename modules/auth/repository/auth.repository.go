@@ -3,16 +3,17 @@ package repository
 import (
 	"context"
 
+	"go.mongodb.org/mongo-driver/bson/primitive"
+	"go.mongodb.org/mongo-driver/mongo"
+
 	"github.com/heyubani/go-template/database"
 	"github.com/heyubani/go-template/interfaces"
 	models "github.com/heyubani/go-template/modules/auth/model"
-	"go.mongodb.org/mongo-driver/bson/primitive"
-	"go.mongodb.org/mongo-driver/mongo"
 )
 
 var (
-	dBName       = "cloudsania" // database name
-	dbCollection = "auth"       // collection name
+	dBName       = "database_name" // database name
+	dbCollection = "auth"          // collection name
 	ctx          context.Context
 )
 
